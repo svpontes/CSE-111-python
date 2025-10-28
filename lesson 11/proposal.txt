@@ -1,0 +1,75 @@
+Significant Program Proposal
+
+(This is a proposal. All proposals are written with our best knowledge
+at the beginning of a project. As we progress from the beginning to the
+end of a project, we gain more knowledge, and some of the ideas we
+proposed change. This is part of completing any project and is fine.
+However, we still must write a proposal so that our teachers or
+supervisors know what we intend to do. Please answer each of the
+following questions to the best of your knowledge.)
+
+1. What is the title of your program?
+
+Check Login and password in other to allow user to access his account 
+
+2. What real world problem will your program address or help to solve?
+
+Check Login and password in other to allow user to access his account .
+
+Check if is the right person trying to access a personal account. This is present in most applications where we want to have an account and to keep personal data safe from anyone except us.  
+
+3. What will you learn from developing this program?
+
+I will learn how to make an graphic interface to the python code, also I will try to hide the passaword trhough a rash in order to cryptograph the password and then compared with the one in the list( the one in the list also will be rashed). Work with layout , text, checkbox, buttom and other elements in the graphic window element. 
+
+
+
+4. What Python modules will your program use? (Some examples are: csv,
+datetime, functools, matplotlib, math, pandas, pytest, random, requests,
+and tkinter.)
+
+functools, csv, pytest, pySimpleGUI, loops, cryptoghraph
+
+5. Will you separate your Python program into functions that each
+perform a single task?
+
+yes. I make a main function and from there call the others functions
+
+6. Will you write test functions to test many of your program functions?
+
+I´ll perform tests using pytest tool
+
+
+Pesquisa:
+
+Video about some example of graphic interface
+
+https://www.youtube.com/watch?v=UnfmxnFpfdM
+
+https://docs.python.org/3/library/tkinter.html#the-window-manager
+
+code until now:
+
+from  tkinter import *
+from PySimpleGUI import PySimpleGUI 
+
+def main_account_screen():
+    
+    main_screen = Tk()   # create a GUI window 
+    main_screen.geometry("400x300") # set the configuration of GUI window 
+    main_screen.title("Account Login") # set the title of GUI window
+ 
+# create a Form label 
+    Label(text="Login Or Register",fg="white", bg="black",width="400", height="2", font=("poppins", 13)).pack() 
+    Label(text="").pack() 
+ 
+# create a Login Button 
+    Button(text="Login", height="2", width="30",activebackground="red", activeforeground="white", fg="white", bg="black", font=("poppins", 11)).pack() 
+    Label(text="").pack() 
+ 
+# create a register button
+    Button(text="Register", height="2", width="30",fg="white", bg="black", activebackground="red", activeforeground="white", font=("poppins", 11)).pack()
+ 
+    main_screen.mainloop() # start the GUI
+ 
+main_account_screen() # call the main_account_screen() function

@@ -1,0 +1,19 @@
+change tkinter icon window
+
+ttps://www.youtube.com/watch?v=ZxbigM_AouI
+
+https://www.pythontutorial.net/tkinter/tkinter-window/
+
+Creating buttons with Tkinter
+
+https://www.youtube.com/watch?v=yuuDJ3-EdNQ
+
+Tkinter Window  
+https://www.pythontutorial.net/tkinter/tkinter-window/
+
+Tkinter StringVar
+
+https://www.delftstack.com/howto/python-tkinter/how-to-bind-enter-key-to-a-function-in-tkinter/
+Bind key press to a function 
+https://www.youtube.com/watch?v=ZxbigM_AouI
+

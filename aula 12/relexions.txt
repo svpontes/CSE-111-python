@@ -1,0 +1,21 @@
+Please take a few minutes to reflect on your experience in CSE 111 and
+think about the challenges, successes, and all that you've learned
+along the way.
+
+
+Now, please respond thoroughly (1 - 2 paragraphs for each question) to the following questions.
+
+1. Describe an experience you had this semester where you saw the power of functions.
+
+Rigth after the second lesson I saw jow different and powerfull was working with functions. In the modlu CSE110 we do not focus on that feature. Instead of getting input and deal with outpu, functions works much faster in programming.
+
+
+
+2. In your judgment, what is the value of test functions?
+
+Well, I think none of the businesses would like to use any application from programming that was not tested enough to not present bugs. I think programming brings huge responsibility because we are setting how things would work, like future cars, airplanes, etc... In fact, everything will be running over some computer programming. 
+
+
+3. Describe your process for troubleshooting and fixing a program that has a problem. What is one thing you can do to improve your process?
+
+Fixing things already done is kind of complicated. In my home town, they say it is like a jump in a train that is running. As far as I know, a good practice of documentation on the code represents an immense help when dealing with fixing something in a computer programming. One of the learnings that were very helpful in my case was when we learn how to use the debugging options in Visual Studio. After that I got myself playing with that in order to better understand how the logic works behind the lines of code and it really works.
