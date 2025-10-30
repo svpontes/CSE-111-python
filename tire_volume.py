@@ -23,23 +23,28 @@ others = 79.99
 current_date_time = datetime.now()
 print(f"{current_date_time:%Y-%m-%d}")
 print()
-w = int(input("What is the tire width ? "))
-a = int(input("What is the tire aspect ratio ? "))
-d = int(input("What is the  tire diameter ? "))
-v = round(pi*w*w*a*(w*a+2540*d)/10000000000,2)
+
+#The size of a car tire in the United States is represented with three numbers like this: 205/60R15. 
+t_width = int(input("What is the tire width? Please provide milimeters measure! "))
+t_a_ratio = int(input("What is the tire aspect ratio ? "))
+t_diameter = int(input("What is the  tire diameter? Please provide inches measure ? "))
+
+#volume calc
+t_volume = round(pi*t_width**2*t_a_ratio*(t_width*t_a_ratio+2540*t_diameter)/10000000000)
+
 phone_number = ""
 print()
-print(f"The volume of the tire you choose is {v:.2f} liters")
+print(f"The volume of the tire you choose is {t_volume:.2f} liters")
 print()
 ask = "Y".lower()
 
-if v == 39.92:
-    print(f"The price for tire {w} {a}R {d} is U$ {tire_2056015}")
-elif v == 24.09:
-    print(f"The price for tire {w} {a}R {d} is U$ {tire_1855014}")
+if t_volume == 39.92:
+    print(f"The price for tire {t_width} {t_a_ratio}R {t_diameter} is U$ {tire_2056015}")
+elif t_volume == 24.09:
+    print(f"The price for tire {t_width} {t_a_ratio}R {t_diameter} is U$ {tire_1855014}")
 else:
-    print(f"The price for tire {w} {a}R {d} is U$ {others}")
-ask = input(f"Would like to buy the tire {w} {a} {d}? Y or N ")
+    print(f"The price for tire {t_width} {t_a_ratio}R {t_diameter} is U$ {others}")
+ask = input(f"Would like to buy the tire {t_width} {t_a_ratio} {t_diameter}? Y or N ")
 if ask == "y":
     phone_number = input("Please digit your phone number: ")
     print(f"Your phone number is {phone_number}")
@@ -47,4 +52,4 @@ else:
     print("Thank you!")
 with open("volume.txt", "at") as tire_volume:
     print(f"Today {current_date_time:%Y-%m-%d}", file = tire_volume) 
-    print(f"Width: {w} Aspect Ratio: {a} Diameter: {d} Volume: {v:.2f} Phone Number:{phone_number}", file = tire_volume)
+    print(f"Width: {t_width} Aspect Ratio: {t_a_ratio} Diameter: {t_diameter} Volume: {t_volume:.2f} Phone Number:{phone_number}", file = tire_volume)

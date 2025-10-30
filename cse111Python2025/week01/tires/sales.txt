@@ -1,0 +1,10 @@
+
+Date: 2025-10-30 14:10
+Cliente Name: 999666333
+sergio pontes
+Amount spent: 215.964
+
+Date: 2025-10-30 14:12
+Cliente Number: 777555333
+Cliente Name: mathew liness
+Amount spent: 153.0

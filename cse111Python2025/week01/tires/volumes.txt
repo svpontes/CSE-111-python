@@ -1,0 +1,15 @@
+Date: 2025-10-30 13:56 
+Width: 205, Aspect Ratio: 60, Diameter: 15, Volume: 40
+Date: 2025-10-30 14:07 
+Width: 205, Aspect Ratio: 55, Diameter: 16, Volume: 38
+
+Date: 2025-10-30 14:07
+Cliente Name: 915356996
+jhon cogswell
+Amount spent: 233.96399999999997
+Date: 2025-10-30 14:10 
+Width: 2151, Aspect Ratio: 2, Diameter: 1, Volume: 20
+Date: 2025-10-30 14:10 
+Width: 205, Aspect Ratio: 60, Diameter: 15, Volume: 40
+Date: 2025-10-30 14:12 
+Width: 185, Aspect Ratio: 70, Diameter: 13, Volume: 35
