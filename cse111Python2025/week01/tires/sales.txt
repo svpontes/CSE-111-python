@@ -8,3 +8,15 @@ Date: 2025-10-30 14:12
 Cliente Number: 777555333
 Cliente Name: mathew liness
 Amount spent: 153.0
+
+Date: 2025-10-30 14:18
+Cliente Number: 555555666
+Cliente Name: taty lep
+Amount spent: 203.4
+
+Date: 2025-10-30 14:33
+Client Number: 222244445555
+Client Name: comprei3 joo
+Item: Tire 205/55R18
+Quantity: 3
+Amount spent: $449.97

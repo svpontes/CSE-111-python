@@ -7,6 +7,7 @@ import sys
 tax = 0.05
 total = 0
 discount = 0.1
+script_dir = os.path.dirname(os.path.abspath(__file__))
 
 #Price list of inventory tires at priceList.txt and its path
 base_path = os.path.dirname(os.path.abspath(__file__))
@@ -27,10 +28,10 @@ t_a_ratio = int(input("What is the tire aspect ratio ? "))
 t_diameter = int(input("What is the  tire diameter? Please provide inches measure ? "))
 
 #volume calc
-t_volume = pi*t_width**2*t_a_ratio*(t_width*t_a_ratio+2540*t_diameter)/10000000000
+t_volume = (pi*t_width**2*t_a_ratio*(t_width*t_a_ratio+2540*t_diameter)/10000000000)
 
 print()
-print(f"The volume of the tire you choose is {t_volume:.0f} liters")
+print(f"The volume of the tire you choose is {t_volume:.2f} liters")
 print()
 
 #checking prices from price_list.txt
@@ -52,33 +53,34 @@ for tire in tires:
         found = True
         break
 
-#selling step
+# Selling step
 user_answer_for_buying = input("Would you like to buy it? Y/N: ").lower()
 
 if user_answer_for_buying == "y":
     tire_quantity = int(input("How many tires? (Buying 4 tires gives FREE installation and 10% OFF): "))
 
     if tire_quantity > 0:
-        #register client
+        # Register client
         client_number = input("Please provide your social security number: ")
         client_f_name = input("Your first name, please!: ")
         client_l_name = input("Your last name, please!: ")
-        # subtotal calc
+
+        # Subtotal calc
         subtotal = tire['price'] * tire_quantity
 
-        # applied discount if byuing 4 tires
+        # Applied discount if buying 4 tires
         if tire_quantity == 4:
             applied_discount = subtotal * discount
             subtotal -= applied_discount
             print("\nYou win FREE installation and 10% OFF your purchase! Congratulations!")
         else:
-            discount = 0
+            applied_discount = 0
 
-        # tax and total calc
+        # Tax and total calc
         tax_paid = subtotal * tax
         total = subtotal + tax_paid
 
-        # print receiipt
+        # Print receipt
         print("\n---------- RECEIPT ----------")
         print(f"Date: {current_date_time_os}")
         print(f"Item: Tire {t_width}/{t_a_ratio}R{t_diameter}")
@@ -90,32 +92,39 @@ if user_answer_for_buying == "y":
         print(f"TOTAL after tax: ${total:.2f}")
         print("-----------------------------\n")
 
+        # Append data to sales.txt
+        
+        sales_file_path = os.path.join(script_dir, "sales.txt")
+        with open(sales_file_path, "at") as sales_file:
+            line_to_append = (
+                f"\nDate: {current_date_time_os}"
+                f"\nClient Number: {client_number}"
+                f"\nClient Name: {client_f_name} {client_l_name}"
+                f"\nItem: Tire {t_width}/{t_a_ratio}R{t_diameter}"
+                f"\nQuantity: {tire_quantity}"
+                f"\nAmount spent: ${subtotal:.2f}"
+            )
+            print(line_to_append, file=sales_file)
+
+            print("\nSales registered at sales.txt")
+
     else:
         print("Invalid quantity. No purchase registered.")
 
 else:
     print("No purchase at this time. Thanks!")
 
+
+
 #code introduced just to make sure volumes.txt would be created and saved in my tires folder
 #obtain the full path where __file__ point to volumes.txt
-script_dir = os.path.dirname(os.path.abspath(__file__))
 file_path = os.path.join(script_dir, "volumes.txt")
 #Append data in a text file
 with open(file_path, "at") as volumes_file:
 
-    line_to_append = f"Date: {current_date_time_os} \nWidth: {t_width}, Aspect Ratio: {t_a_ratio}, Diameter: {t_diameter}, Volume: {t_volume:.0f}"
+    line_to_append = f"Date: {current_date_time_os} \nWidth: {t_width}, Aspect Ratio: {t_a_ratio}, Diameter: {t_diameter}, Volume: {t_volume:.2f}"
 
     print(line_to_append, file=volumes_file)
 
 print("\nTire Volumes registered at volumes.txt")
 
-#Append data in a text file
-script_dir = os.path.dirname(os.path.abspath(__file__))
-file_path = os.path.join(script_dir, "sales.txt")
-with open(file_path, "at") as sales_file:
-
-    line_to_append = f"\nDate: {current_date_time_os}\nCliente Number: {client_number}\nCliente Name: {client_f_name} {client_l_name}\nAmount spent: {subtotal}"
-
-    print(line_to_append, file=sales_file)
-
-print("\nSales registered at sales.txt")
